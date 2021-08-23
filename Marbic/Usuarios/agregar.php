@@ -2,7 +2,7 @@
     //Todo lo que escribamos acá será código PHP.
 
     include_once('../Config/config.php');
-    include_once('usuario.php'); //Llamamos al archivo Usuario.php
+    include_once('Usuario.php'); //Llamamos al archivo Usuario.php
 
     if ( isset($_POST) && !empty($_POST) ){
         $nuevo_usuario = new Usuario(); 

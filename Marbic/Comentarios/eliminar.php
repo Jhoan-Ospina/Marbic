@@ -1,9 +1,9 @@
 <?php 
 
     include_once('../Config/config.php');
-    include_once('Usuario.php'); //Llamamos al archivo Usuario.php
+    include_once('comentario.php'); //Llamamos al archivo Usuario.php
 
-    $usuario = new Comentario();
+    $comentario = new Comentario();
     
     /** Se llama la función eliminar usuario y se envía el id del usuario que se quiere eliminar.
      * 

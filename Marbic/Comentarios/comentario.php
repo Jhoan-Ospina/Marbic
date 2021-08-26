@@ -27,5 +27,10 @@ class Comentario{
         $ver_comentarios = " SELECT * FROM comentarios";
         return mysqli_query($this->conn, $ver_comentarios);
     }
+
+    function eliminar_comentario($id){
+        $eliminar_comentario = " DELETE FROM comentarios WHERE id = $id  ";
+        return mysqli_query($this->conn, $eliminar_comentario);
+    }
 }
 ?>

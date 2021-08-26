@@ -22,20 +22,26 @@
 </head>
 
 <body>
+    <?php
+        include('../menu.php');
+    ?>
+    <div class="container">
+        <h1 class="text-center mt-5" >Todos los usuarios</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>CORREO</th>
-                <th>CELULAR</th>
-                <th>ROL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>CORREO</th>
+                    <th>CELULAR</th>
+                    <th>ROL</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
                 while ( $info_usuario = mysqli_fetch_object($todos_los_usuarios) ){
                     echo "<tr>";
                     echo "<td> $info_usuario->id </td>";
@@ -44,11 +50,13 @@
                     echo "<td> $info_usuario->correo_electronico </td>";
                     echo "<td> $info_usuario->celular </td>";
                     echo "<td> $info_usuario->rol </td>";
+                    echo "<td><a href='".ROOT."/Usuarios/eliminar.php?id=".$info_usuario->id."' class=' btn btn-danger' > X </a>    </td>";
                     echo "</tr>";
                 }
             ?>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">

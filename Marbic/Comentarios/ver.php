@@ -22,20 +22,25 @@
 </head>
 
 <body>
+    <?php
+        include('../menu.php');
+    ?>
+    <div class="container">
+        <h1 class="text-center mt-5">Todos los usuarios</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>APELLIDO</th>
-                <th>FECHA</th>
-                <th>TIPO DE COMENTARIO</th>
-                <th>COMENTARIO</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>APELLIDO</th>
+                    <th>FECHA</th>
+                    <th>TIPO DE COMENTARIO</th>
+                    <th>COMENTARIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
                 while ( $info_comentario = mysqli_fetch_object($todos_los_comentarios) ){
                     echo "<tr>";
                     echo "<td> $info_comentario->id </td>";
@@ -44,11 +49,13 @@
                     echo "<td> $info_comentario->fecha </td>";
                     echo "<td> $info_comentario->tipo_de_comentario </td>";
                     echo "<td> $info_comentario->comentario </td>";
+                    echo "<td><a href='".ROOT."/Comentarios/eliminar.php?id=".$info_comentario->id."' class=' btn btn-danger' > X </a>    </td>";
                     echo "</tr>";
                 }
             ?>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">

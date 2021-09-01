@@ -10,6 +10,7 @@ include_once('salones.php'); //llamamos al archivo
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,27 +22,29 @@ include_once('salones.php'); //llamamos al archivo
 </head>
 
 <body>
-
-<div class= "container"></div>
-<h1>eliminar elemento</h1>
-    <table class="table">
-   <thead>
-     <tr>
-        <th>ID</th>
-        <th>NOMBRE del salon</th>
-        <th>NUMERO SILLAS</th>
-        <th>MUMERO MESAS</th>
-        <th>NUMERO MESAS GRANDE</th>
-        <th>NUMERO TELEVISOR</th>
-        <th>NUMERO PUERTA CORREDIZA</th>
-        <th>NUMERO MICROSCOPIO</th>
-        <th>NUMERO ANTIBACTERIAL</th>
-        <th>NUMERO TOALLAS</th>
-        <th>NUMERO BALONES</th>
-     </tr>
-   </thead> 
-   <tbody>
-       <?php
+    <?php
+include('../menu.php');
+?>
+    <div class="container">
+        <h1 class="text-center mt-5">Agregar salón nuevo</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE del salon</th>
+                    <th>NUMERO SILLAS</th>
+                    <th>MUMERO MESAS</th>
+                    <th>NUMERO MESAS GRANDE</th>
+                    <th>NUMERO TELEVISOR</th>
+                    <th>NUMERO PUERTA CORREDIZA</th>
+                    <th>NUMERO MICROSCOPIO</th>
+                    <th>NUMERO ANTIBACTERIAL</th>
+                    <th>NUMERO TOALLAS</th>
+                    <th>NUMERO BALONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
           while ($info_salones = mysqli_fetch_object($todos_los_salones) ) {
             echo "<tr";  
             echo "<tr $info_salones->id </tr>"; 
@@ -61,15 +64,17 @@ include_once('salones.php'); //llamamos al archivo
             
           }
        ?>
-   </tbody>
-</table>
+            </tbody>
+        </table>
+    </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
         integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

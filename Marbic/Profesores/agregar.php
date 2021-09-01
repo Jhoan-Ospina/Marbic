@@ -1,6 +1,6 @@
 <?php
 
-include_once('../Config/Database.php');
+include_once('../Config/config.php');
 include_once('profesores.php');
 
 if ( isset($_POST) && !empty($_POST) ){
@@ -23,13 +23,16 @@ if ($nuevo_profesor){
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 
 <body>
-
+    <?php
+    include('../menu.php');
+?>
     <div class="container">
+        <h1 class="text-center mt-5">Agregar nuevo profesor</h1>
         <form method="POST" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombres</label>
@@ -61,7 +64,7 @@ if ($nuevo_profesor){
             </div>
             <div class="mb-3">
                 <label for="fecha_de_nacimiento" class="form-label">Fecha de nacimiento</label>
-                <input type="text" class="form-control" id="fecha_de_nacimiento" name="fecha_de_nacimiento"
+                <input type="date" class="form-control" id="fecha_de_nacimiento" name="fecha_de_nacimiento"
                     aria-describedby="emailHelp">
             </div>
             <div class="mb-3">

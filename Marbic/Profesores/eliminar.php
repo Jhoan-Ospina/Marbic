@@ -11,7 +11,7 @@ $profesores = new profesores ();
  * Si NO se elimina, entonces mostrar un error.
  */
 if ( $profesores->eliminar_usuario( $_GET['id'] ) ){
- header( 'Location: ' . ROOT . '/Usuarios/ver.php');
+ header( 'Location: ' . ROOT . '/Profesores/ver.php');
 }else{
     echo '<div>Error</div>';
 }

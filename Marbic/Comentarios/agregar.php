@@ -31,33 +31,37 @@
     <?php
          include('../menu.php');
     ?>
+    <div class="container">
+    <h1 class="text-center mt-5">Agregar nuevo comentario</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for=""></label>
+                <input id="nombre" name="nombre" class="nombre form-control" placeholder="Nombre" >
+            </div>
+            <div class="mb-3">
+                <label for=""></label>
+                <input id="apellido" name="apellido" class="apellido form-control" placeholder="Apellido">
+            </div>
+            <div class="mb-3">
+                <label for=""></label>
+                <input id="tipo_de_comentario" name="tipo_de_comentario" class="tipo_de_comentario form-control"
+                    placeholder="Tipo de comentario">
+            </div>
+            <div class="mb-3">
+                <label for=""></label>
+                <textarea class="mensaje form-control" name="comentario" id="comentario" cols="30" rows="5"
+                    placeholder="Mensaje"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for=""></label>
+                <input id="fecha" type="date" name="fecha" class="fecha form-control" placeholder="Fecha">
+            </div>
 
-<form method="POST" enctype="multipart/form-data" >
-        <div class="mb-3">
-            <label for=""></label>
-            <input id="nombre" name="nombre" class="nombre" placeholder="Nombre">
-        </div>
-        <div class="mb-3">
-            <label for=""></label>
-            <input id="apellido" name="apellido" class="apellido" placeholder="Apellido">
-        </div>
-        <div class="mb-3">
-            <label for=""></label>
-            <input id="tipo_de_comentario" name="tipo_de_comentario" class="tipo_de_comentario" placeholder="Tipo de comentario">
-        </div>
-        <div class="mb-3">
-            <label for=""></label>
-            <textarea class="mensaje" name="comentario" id="comentario" cols="30" rows="5" placeholder="Mensaje"></textarea>
-        </div>
-        <div class="mb-3">
-            <label for=""></label>
-            <input id="fecha" name="fecha" class="fecha" placeholder="Fecha">
-        </div>
-    
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">

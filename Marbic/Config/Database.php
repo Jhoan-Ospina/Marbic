@@ -8,7 +8,7 @@ class Database
   private $conn;
 
   /**
-   * Método constructor, este método será el primero que se ejecute al momento de llamar la clase Database.
+   * Función constructor, este método será el primero que se ejecute al momento de llamar la clase Database.
    */
   function __construct()
   {
